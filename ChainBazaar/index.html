@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Chain-Bazaar</title>
+</head>
+
+<body class="h-full">
+    <div class="container mx-auto p-5">
+        <div class="md:flex md:flex-row md:justify-between text-center text-sm sm:text-base">
+            <div class="flex flex-row justify-center">
+                <div class="bg-gradient-to-r from-purple-400 to-red-400 w-10 h-10 rounded-lg"></div>
+                <h1 class="text-2xl text-gray-600 ml-2 mt-0.5">Chain-Bazaar</h1>
+            </div>
+            <div class="mt-2">
+                <a href="./index.html" class="text-gray-600 hover:text-purple-600 p-4 px-3 sm:px-4">Home</a>
+                <a href="./admin.html" class="text-gray-600 hover:text-purple-600 p-4 px-3 sm:px-4">Admin</a>
+                <a href="#" class="text-gray-600 hover:text-purple-600 p-4 px-3 sm:px-4">Blog</a>
+                <a href="#" class="text-gray-600 hover:text-purple-600 p-4 px-3 sm:px-4">Contact</a>
+                <a href="./cart.html" class="bg-purple-600 text-gray-50 hover:bg-purple-700 p-3 px-3 sm:px-5 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span id="spanCart">Cart (0)</span>
+                </a>
+            </div>
+        </div><!-- Main Navigation -->
+
+
+        <div class="rounded-lg shadow-lg my-10 flex flex-row ">
+            <!-- class="lg:w-2/5 w-full lg:flex lg:flex-row hidden" -->
+            <!-- class="lg:w-2/5 w-full flex flex-col justify-center items-center" -->
+            <!-- lg:w-2/5 w-full bg-gradient-to-r from-black to-gray-800 lg:from-black lg:via-garay-800 lg:to-transparent rounded-lg  p-12 -->
+
+            <div class="lg:w-3/5 w-full flex flex-col justify-center items-start bg-gradient-to-r from-purple-200 rounded-lg  p-16">
+                <div class="lg:w-1/2">
+                    <!-- <h3 class="text-2xl font-bold text-white ">Dakikalar içinde kapınızda</h3> -->
+                    <div class="my-8">
+                        <button id="btnConnect" onclick="btnConnectOnClick();" class="px-10 py-4 text-sm text-purple-600 font-semibold rounded-full border border-purple-400 hover:text-white hover:bg-purple-600 
+                            hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">CONNECT WALLET</button>
+                        <!-- <button id="btnTest" onclick="btnTestOnClick();" class="px-10 py-4 text-sm text-purple-600 font-semibold rounded-full border border-purple-400 hover:text-white hover:bg-purple-600 
+                                hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">TEST</button> -->
+                        <!-- <button id="product_create_button"
+                            class="px-10 py-4 text-sm text-lime-600 font-semibold rounded-full border border-lime-400 hover:text-white 
+                                hover:bg-lime-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-lime-600 focus:ring-offset-2">CREATE
+                            PRODUCT</button>
+                        <button id="button_update_product"
+                            class="px-10 py-4 text-sm text-yellow-600 font-semibold rounded-full border border-yellow-400 hover:text-white 
+                                        hover:bg-yellow-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:ring-offset-2">UPDATE
+                            PRODUCTS</button> -->
+                    </div>
+                </div>
+            </div>
+            <div class="lg:w-2/5 w-full lg:flex lg:flex-row justify-center">
+                <img src="./images/index.png" class="w-15 h-30" />
+            </div>
+        </div>
+        <!-- Login Section -->
+
+        <div class="my-10">
+            <div class="flex flex-row justify-between my-5">
+                <h2 class="text-3xl">Products</h2>
+                <button id="btnLoadProducts" onclick="btnPopulateProductsOnClick();" class="px-10 py-4 text-sm text-gray-600 font-semibold rounded-full border border-gray-400 hover:text-white 
+                            hover:bg-gray-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2">LOAD PRODUCTS</button>
+                <!-- <a href="#" class="flex flex-row text-lg hover:text-purple-700">
+                    View All
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-5 ml-1" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </a> -->
+            </div>
+
+            <div id="divBaseProduct" class="shadow-lg rounded-lg" hidden>
+                <a href="#">
+                    <img src="./images/products/Products/1.png" onerror="javascript:this.src='./images/products/Products/no_image.png'" class="rounded-tl-lg rounded-tr-lg"/>
+                </a>
+                <div class="p-5">
+                    <div class="flex flex-col xl:flex-row justify-between">
+                        <h3 class="place-content-start px-3 flex flex-row justify-center "><a href="#">Biber</a>
+                        </h3>
+                        <p class="place-content-end px-3 flex flex-row justify-center"> 0.0001 ETH</p>
+                    </div>
+
+                    <div class="flex flex-col xl:flex-row justify-between my-1">
+                        <button data-code="PC0001" class="btnBuyProduct bg-gradient-to-r from-red-600 to-pink-500 rounded-full py-2 px-4 my-2 text-sm text-white hover:bg-pink-600 hover:from-pink-600 hover:to-pink-600 flex flex-row justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                            Add to Cart
+                        </button>
+                        <a class="bg-purple-600 rounded-full py-2 px-4 my-2 text-sm text-white hover:bg-purple-700 flex flex-row justify-center" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                            View Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="divProducts" class="grid grid-flow-row grid-cols-1 md:grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+            </div>
+        </div> <!-- Products Section -->
+
+
+        <div class="border-t-2 border-gray-300 flex flex-col md:flex-row md:justify-between text-center py-5 text-sm">
+            <div class="mb-4">
+                <a href="#" class="mx-2.5">About</a>
+                <a href="#" class="mx-2.5">Privacy Policy</a>
+                <a href="#" class="mx-2.5">Terms of Services</a>
+            </div>
+            <p>&copy; Copyright Reserved 2022</p>
+        </div><!-- Footer Section -->
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.0-rc.0/web3.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.5.2/ethers.umd.min.js" integrity="sha512-PtOcu3WZTldHT+VjAJdWV5ss+iGebEgc1h5olJuxUNPvKuC0VOZsk1UhNgQYi5oIyrNHhdIOw8WQMdZwBv1MyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <!-- <script src="https://cdn.ethers.io/lib/ethers-5.0.umd.min.js" type="text/javascript"></script> -->
+    <!-- <script type="module" src="index.js"></script> -->
+    <script type="module" src="main.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+
+</body>
+
+</html>

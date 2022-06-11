@@ -1,0 +1,294 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint64",
+						"name": "productCode",
+						"type": "uint64"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "productName",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "productPrice",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "isRemoved",
+						"type": "bool"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "dataVersion",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timeStamp",
+						"type": "uint256"
+					}
+				],
+				"name": "CreateBlock",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint64",
+						"name": "productCode",
+						"type": "uint64"
+					},
+					{
+						"internalType": "string",
+						"name": "productName",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "productPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "createProduct",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAllBlocks",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint64",
+								"name": "productCode",
+								"type": "uint64"
+							},
+							{
+								"internalType": "string",
+								"name": "productName",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "productPrice",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "isRemoved",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "dataVersion",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timeStamp",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct ProductContract.ProductStruct[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAllProducts",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint64",
+								"name": "productCode",
+								"type": "uint64"
+							},
+							{
+								"internalType": "string",
+								"name": "productName",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "productPrice",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "isRemoved",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "dataVersion",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timeStamp",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct ProductContract.ProductStruct[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTotalBlockCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTotalProductCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint64",
+						"name": "productCode",
+						"type": "uint64"
+					},
+					{
+						"internalType": "string",
+						"name": "productName",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "productPrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isRemoved",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "dataVersion",
+						"type": "uint256"
+					}
+				],
+				"name": "removeProduct",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint64",
+						"name": "productCode",
+						"type": "uint64"
+					},
+					{
+						"internalType": "string",
+						"name": "productName",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "productPrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isRemoved",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "dataVersion",
+						"type": "uint256"
+					}
+				],
+				"name": "updateProduct",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/ProductContract.sol": "ProductContract"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/ProductContract.sol": {
+			"keccak256": "0x7b9a0698edbfd1f8593511dd046df883e2851119fec55a47ecbe4d001b99ae06",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://67f0244e8cc82b22ef5a10f305e179f9e2c311644c2bbd2b1a33f18de846a3dc",
+				"dweb:/ipfs/QmdwvxQn4JDt3CZwN2WXgDQqaydU93SbeBAuLKVdRdpapp"
+			]
+		}
+	},
+	"version": 1
+}

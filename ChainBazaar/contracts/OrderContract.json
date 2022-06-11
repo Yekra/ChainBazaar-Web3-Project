@@ -1,0 +1,559 @@
+{
+	"compiler": {
+		"version": "0.8.14+commit.80d49f37"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint32",
+						"name": "itemKey",
+						"type": "uint32"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint64",
+						"name": "productCode",
+						"type": "uint64"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "productPrice",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint32",
+						"name": "productCount",
+						"type": "uint32"
+					}
+				],
+				"name": "CreateBlockItem",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint32",
+						"name": "orderKey",
+						"type": "uint32"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "totalPrice",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "orderDate",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint32",
+						"name": "status",
+						"type": "uint32"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "isCanceled",
+						"type": "bool"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint32",
+						"name": "dataVersion",
+						"type": "uint32"
+					}
+				],
+				"name": "CreateBlockOrder",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "oldOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnerSet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "Withdrawal",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint32",
+						"name": "orderKey",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "itemKey",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint64",
+						"name": "productCode",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint256",
+						"name": "productPrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint32",
+						"name": "productCount",
+						"type": "uint32"
+					}
+				],
+				"name": "addItem",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "success",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint32",
+						"name": "orderKey",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalPrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "orderDate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint32",
+						"name": "status",
+						"type": "uint32"
+					},
+					{
+						"internalType": "bool",
+						"name": "isCanceled",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint32",
+						"name": "dataVersion",
+						"type": "uint32"
+					}
+				],
+				"name": "addOrder",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "success",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "balance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "changeOwner",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint32",
+						"name": "orderKey",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "itemKey",
+						"type": "uint32"
+					}
+				],
+				"name": "getItem",
+				"outputs": [
+					{
+						"internalType": "uint64",
+						"name": "productCode",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint256",
+						"name": "productPrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint32",
+						"name": "productCount",
+						"type": "uint32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint32",
+						"name": "orderKey",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "itemRow",
+						"type": "uint256"
+					}
+				],
+				"name": "getItemAtIndex",
+				"outputs": [
+					{
+						"internalType": "uint32",
+						"name": "itemKey",
+						"type": "uint32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint32",
+						"name": "orderKey",
+						"type": "uint32"
+					}
+				],
+				"name": "getItemCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "itemCount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint32",
+						"name": "orderKey",
+						"type": "uint32"
+					}
+				],
+				"name": "getOrder",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "customer",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalPrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "orderDate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint32",
+						"name": "status",
+						"type": "uint32"
+					},
+					{
+						"internalType": "bool",
+						"name": "isCanceled",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint32",
+						"name": "dataVersion",
+						"type": "uint32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "row",
+						"type": "uint256"
+					}
+				],
+				"name": "getOrderAtIndex",
+				"outputs": [
+					{
+						"internalType": "uint32",
+						"name": "orderkey",
+						"type": "uint32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getOrderCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "orderCount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getOrdersBySender",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "customer",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "totalPrice",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "orderDate",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint32",
+								"name": "status",
+								"type": "uint32"
+							},
+							{
+								"internalType": "bool",
+								"name": "isCanceled",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint32",
+								"name": "dataVersion",
+								"type": "uint32"
+							}
+						],
+						"internalType": "struct OrderContract.OrderShadow[]",
+						"name": "filteredOrders",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getOwner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address payable",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalWithdrawal",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdrawn",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/OrderContract.sol": "OrderContract"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/OrderContract.sol": {
+			"keccak256": "0x506911382077a72553de20a876d9f1f9a909e9a56b93256f7f587ca58b499ba0",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://a2fd5f60bb9007353b630f988c8d14f197b8301977d53f1049fd32013b4b7b71",
+				"dweb:/ipfs/QmUgCfgcBaT5i94qUxxXGZnRF5oBCvhZ99T4cqp5LUvrhG"
+			]
+		}
+	},
+	"version": 1
+}
